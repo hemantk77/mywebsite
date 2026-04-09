@@ -1,0 +1,94 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8rem;
+  gap: 4rem;
+  background-color: var(--bg);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 550px;
+}
+
+.greeting {
+  color: var(--color-comment);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  font-family: 'Courier New', monospace;
+}
+
+.bio {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1rem;
+  max-width: 450px;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.btnPrimary {
+  padding: 0.8rem 2rem;
+  background: var(--color-keyword);
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.btnPrimary:hover {
+  opacity: 0.85;
+}
+
+.btnSecondary {
+  padding: 0.8rem 2rem;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btnSecondary:hover {
+  border-color: var(--color-keyword);
+  color: var(--color-keyword);
+}
+
+/* Code block on the right */
+.codeBlock {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  line-height: 2;
+  min-width: 320px;
+}
+
+/* Syntax colors */
+.keyword { color: var(--color-keyword); }
+.variable { color: var(--color-variable); }
+.string   { color: var(--color-string); }
+.teal     { color: var(--color-teal); }
