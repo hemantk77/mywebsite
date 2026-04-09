@@ -49,7 +49,7 @@ function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
             >
-                <a href="#projects" clasName={styles.btnPrimary}>View My Work</a>
+                <a href="#projects" className={styles.btnPrimary}>View My Work</a>
                 <a href="#contact" className={styles.btnSecondary}>Get IN Touch</a>
             </motion.div>
 

@@ -18,7 +18,7 @@ function About() {
             >
                 <div className={styles.imageWrapper}>
                     <div className={styles.imageWrapper}>
-                        <span><img src={image.jpg} alt="temporary_img" className={styles.image} /></span>
+                        <span><img src="/src/assets/image.jpg" alt="temporary_img" className={styles.image} /></span>
                     </div>
                     <div className={styles.imageBorder} />
                 </div>
@@ -32,7 +32,7 @@ function About() {
             >
                 <p className={styles.sectionLabel}>// about me</p>
                 <h2 className={styles.heading}>
-                    I turn <span className={styles.accent}>ideas</span> into real <span ClassName={styles.accent}>products</span>
+                    I turn <span className={styles.accent}>ideas</span> into real <span className={styles.accent}>products</span>
                 </h2>
                 <p className={styles.bio}>
                      I'm a full stack developer based in Berlin, passionate about
