@@ -4,6 +4,7 @@ import styles from '../styles/Navbar.module.css'
 
 function Navbar() {
     const [scrolled, setScrolled] = useState(false)
+    const [theme, setTheme] = useState('dark')
 
     useEffect(() => {
         const handleScroll = () => {
