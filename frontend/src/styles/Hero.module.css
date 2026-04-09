@@ -1,28 +1,24 @@
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8rem;
-  gap: 4rem;
-  background-color: var(--bg);
-}
-
-.content {
-  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
   gap: 1.2rem;
-  max-width: 550px;
+  background-color: var(--bg);
 }
 
 .greeting {
   color: var(--color-comment);
   font-size: 1rem;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .name {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.1;
@@ -39,7 +35,7 @@
   color: var(--text-secondary);
   line-height: 1.8;
   font-size: 1rem;
-  max-width: 450px;
+  max-width: 480px;
 }
 
 .buttons {
@@ -75,20 +71,27 @@
   color: var(--color-keyword);
 }
 
-/* Code block on the right */
-.codeBlock {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 2rem;
-  font-family: 'Courier New', monospace;
-  font-size: 1rem;
-  line-height: 2;
-  min-width: 320px;
+/* Scroll indicator at the bottom */
+.scroll {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Syntax colors */
+.scrollDot {
+  width: 6px;
+  height: 6px;
+  background: var(--text-secondary);
+  border-radius: 50%;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
 .keyword { color: var(--color-keyword); }
-.variable { color: var(--color-variable); }
-.string   { color: var(--color-string); }
-.teal     { color: var(--color-teal); }
+.string  { color: var(--color-string); }
