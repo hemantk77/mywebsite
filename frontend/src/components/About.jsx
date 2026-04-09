@@ -5,7 +5,7 @@ import styles from '../styles/About.module.css'
 
 function About() {
     const ref = useRef(null)
-    const inInView = useInView(ref, {once: true, margin: '-100px'})
+    const isInView = useInView(ref, {once: true, margin: '-100px'})
 
     return (
         <section id='about' className={styles.about} ref={ref}>
@@ -13,12 +13,12 @@ function About() {
             <motion.div
                 className={styles.left}
                 initial={{ opacity: 0, x: -40 }}
-                animate={ isInView ? { opacity: 1, x: 0} : {}}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6 }}
             >
                 <div className={styles.imageWrapper}>
                     <div className={styles.imageWrapper}>
-                        <span>Your Photo</span>
+                        <span><img src={image.jpg} alt="temporary_img" className={styles.image} /></span>
                     </div>
                     <div className={styles.imageBorder} />
                 </div>
@@ -27,7 +27,7 @@ function About() {
             <motion.div
                 className={styles.right}
                 initial={{ opacity: 0, x: 40 }}
-                animate={isInView ? {opacity: 1, X:0 } :{}}
+                animate={isInView ? { opacity: 1, X:0 } :{}}
                 transition={{ duration: 0.6, delay: 0.2 }}
             >
                 <p className={styles.sectionLabel}>// about me</p>
