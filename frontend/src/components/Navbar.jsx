@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { MdLightMode, MdDarkMode } from 'react-icons/md'
 import styles from '../styles/Navbar.module.css'
 
 function Navbar() {
@@ -12,6 +13,12 @@ function Navbar() {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
+    const toggleTheme = () => {
+        const next = theme === 'dark' ? 'light' : 'dark'
+        setTheme(next)
+        document.documentElement.setAttribute('data-theme', next)
+    }
 
     return (
         <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} `}>
