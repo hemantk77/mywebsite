@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import styles from '../styles/About.module.css'
 
 function About() {
-    const ref = useREf(null)
+    const ref = useRef(null)
     const inInView = useInView(ref, {once: true, margin: '-100px'})
 
     return (
