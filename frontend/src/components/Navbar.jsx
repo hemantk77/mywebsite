@@ -24,8 +24,7 @@ function Navbar() {
     return (
         <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} `}>
             <div className={styles.logo}>
-                Hemant Kumar
-                <span>YN</span>
+                <span>HK</span>
             </div>
             <ul className={styles.navLinks}>
                 <li><a href="#about">About</a></li>
