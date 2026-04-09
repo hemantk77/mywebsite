@@ -46,3 +46,22 @@
 .navLinks a:hover {
   color: #fff;
 }
+
+.themeToggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.themeToggle:hover {
+  border-color: var(--color-keyword);
+  color: var(--color-keyword);
+}

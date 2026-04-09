@@ -32,6 +32,9 @@ function Navbar() {
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button className={styles.themeToggle} onClick={toggleTheme}>
+                {theme === 'dark' ? <MdLightMode size={20} /> : <MdDarkMode size={20}/>}
+            </button>
         </nav>
     )
 }
