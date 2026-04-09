@@ -10,6 +10,8 @@
   z-index: 100;
   transition: all 0.3s ease;
   box-sizing: border-box;
+  background: transparent; 
+  border-bottom: 1px solid var(--border); 
 }
 
 .scrolled {
