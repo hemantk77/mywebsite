@@ -63,3 +63,5 @@ function About() {
 }
 
 export default About
+
+//some fixes need to be done
