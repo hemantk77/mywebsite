@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from '../styles/About.module.css'
 
@@ -17,7 +16,7 @@ function About() {
                 transition={{ duration: 0.6 }}
             >
                 <div className={styles.imageWrapper}>
-                    <div className={styles.imageWrapper}>
+                    <div className={styles.imagePlaceholder}>
                         <span><img src="/src/assets/image.jpg" alt="temporary_img" className={styles.image} /></span>
                     </div>
                     <div className={styles.imageBorder} />
@@ -43,20 +42,6 @@ function About() {
                     When I'm not coding, you'll find me exploring new tech,
                     contributing to open source, or just vibing with good music.
                 </p>
-                <div className={styles.stats}>
-                    <div className={styles.stat}>
-                        <span className={styles.statNumber}>5+</span>
-                        <span className={styles.statLabel}>Projects Built</span>
-                    </div>
-                    <div className={styles.stat}>
-                        <span className={styles.statNumber}>2+</span>
-                        <span className={styles.statLabel}>Years Coding</span>
-                    </div>
-                    <div className={styles.stat}>
-                        <span className={styles.statNumber}>5+</span>
-                        <span className={styles.statLabel}>Clients</span>
-                    </div>
-                </div>
             </motion.div>
         </section>
     )
