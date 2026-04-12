@@ -15,41 +15,10 @@
   justify-content: center;
 }
 
-.imageWrapper {
-  position: relative;
-  width: 320px;
-  height: 380px;
-}
-
-.imagePlaceholder {
-  width: 100%;
-  height: 100%;
-  background: var(--bg-secondary);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  border: 1px solid var(--border);
-}
-
 .image {
-  width: 100%;
-  height: 100%;
+  width: 350px;
+  height: 380px;
   object-fit: cover;
-  border-radius: 16px;
-}
-
-.imageBorder {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  width: 100%;
-  height: 100%;
-  border: 2px solid var(--color-keyword);
-  border-radius: 16px;
-  z-index: -1;
 }
 
 /* Right — text */

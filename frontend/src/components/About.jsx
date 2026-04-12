@@ -15,12 +15,7 @@ function About() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6 }}
             >
-                <div className={styles.imageWrapper}>
-                    <div className={styles.imagePlaceholder}>
-                        <span><img src="/src/assets/image.jpg" alt="temporary_img" className={styles.image} /></span>
-                    </div>
-                    <div className={styles.imageBorder} />
-                </div>
+                <span><img src="/src/assets/image.jpg" alt="temporary_img" className={styles.image} /></span>
             </motion.div>
 
             <motion.div
