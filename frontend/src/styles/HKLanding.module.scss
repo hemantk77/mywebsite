@@ -1,0 +1,137 @@
+// HK landing — retro / glossy hero
+$hud: #ffae5c;
+$hud-dim: rgba(255, 174, 92, 0.55);
+$mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+
+.root {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  --panel: rgba(10, 12, 20, 0.6);
+
+  &.light {
+    --panel: rgba(255, 255, 255, 0.6);
+    .crt { opacity: 0.22; }
+  }
+
+  canvas { display: block; }
+}
+
+.canvasMount { position: absolute; inset: 0; }
+
+.crt {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+  background:
+    repeating-linear-gradient(0deg, rgba(0,0,0,.1) 0, rgba(0,0,0,.1) 1px, transparent 1px, transparent 3px),
+    radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.35) 100%);
+}
+
+.hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  font-family: $mono;
+}
+
+.title {
+  position: absolute;
+  top: 22px; left: 24px;
+  color: $hud;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(255, 140, 40, 0.5);
+}
+.titleSub {
+  display: block; margin-top: 4px;
+  color: $hud-dim; font-size: 10px; letter-spacing: 2px;
+}
+
+.toggle {
+  position: absolute;
+  top: 18px; right: 20px;
+  pointer-events: auto;
+  padding: 9px 13px;
+  background: var(--panel);
+  border: 1px solid $hud-dim;
+  color: $hud;
+  font: inherit; font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  &:hover { border-color: $hud; }
+}
+
+// colour picker
+.palette {
+  position: absolute;
+  bottom: 64px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 12px;
+  pointer-events: auto;
+  transition: opacity 0.35s ease;
+}
+.paletteLabel {
+  position: absolute;
+  top: -22px; left: 0; right: 0;
+  text-align: center;
+  color: $hud-dim; font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+}
+.swatch {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  &:hover { transform: scale(1.15); }
+}
+.swatchActive { border-color: #fff; transform: scale(1.2); }
+
+.hint {
+  position: absolute;
+  bottom: 26px; left: 0; right: 0;
+  text-align: center;
+  color: $hud-dim; font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  transition: opacity 0.4s ease;
+}
+
+// zoom-in menu
+.menu {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -46%) scale(0.96);
+  display: flex; flex-direction: column; gap: 10px;
+  min-width: 240px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+
+  button {
+    font: inherit; font-size: 15px; letter-spacing: 3px; text-transform: uppercase;
+    padding: 14px 22px; text-align: left;
+    color: $hud;
+    background: var(--panel);
+    border: 1px solid $hud-dim;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: all 0.15s ease;
+    &:hover { border-color: $hud; color: #fff; background: rgba(255, 122, 24, 0.9); padding-left: 30px; }
+  }
+}
+.menuOpen { opacity: 1; transform: translate(-50%, -50%) scale(1); pointer-events: auto; }
+.menuLabel {
+  color: $hud-dim; font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  text-align: center; margin-bottom: 4px;
+}
+.menuClose {
+  margin-top: 6px; text-align: center !important;
+  font-size: 10px !important; color: $hud-dim !important;
+  background: none !important; border: none !important; letter-spacing: 2px;
+  &:hover { color: #fff !important; background: none !important; padding-left: 22px !important; }
+}

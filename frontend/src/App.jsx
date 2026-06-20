@@ -1,15 +1,7 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
+import HKLanding from './components/HKLanding'
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-      <Hero />
-      <About />
-    </div>
-  )
+  return <HKLanding />
 }
 
 export default App
