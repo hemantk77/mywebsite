@@ -1,5 +1,6 @@
 import { useEffect, useSyncExternalStore } from 'react'
 import { MotionConfig, motion, useScroll } from 'framer-motion'
+import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Ticker from './components/Ticker'
@@ -53,6 +54,7 @@ function App() {
       <MotionDiv className="progress" style={{ scaleX: scrollYProgress }} aria-hidden="true" />
       <Navbar onHome={route === 'home'} />
       {route === 'projects' ? <ProjectsPage /> : <Home />}
+      <Analytics />
     </MotionConfig>
   )
 }
