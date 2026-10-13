@@ -44,12 +44,14 @@
   height: 88px;
   border: 1px solid var(--line);
   border-radius: 22px;
-  background: var(--soft);
+  /* always white, so brand colours read the same in light and dark mode */
+  background: #FFFFFF;
+  color: #111312;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 42px;
-  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
 .big {
@@ -60,9 +62,8 @@
 }
 
 .chip:hover .tile {
-  background: var(--accent);
   border-color: var(--accent);
-  color: var(--on-accent);
+  box-shadow: 5px 5px 0 var(--accent);
   transform: scale(1.08);
 }
 

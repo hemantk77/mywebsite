@@ -19,7 +19,7 @@ function Stack() {
                             return (
                                 <li key={skill.name} className={styles.chip}>
                                     <span className={`${styles.tile} ${skill.big ? styles.big : ''}`}>
-                                        <Icon aria-hidden="true" />
+                                        <Icon aria-hidden="true" style={{ color: skill.color }} />
                                     </span>
                                     <span className={`mono ${styles.label}`}>{skill.name}</span>
                                 </li>

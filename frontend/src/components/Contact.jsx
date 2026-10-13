@@ -1,4 +1,4 @@
-import { MdArrowUpward, MdArrowOutward, MdMailOutline } from 'react-icons/md'
+import { MdArrowUpward, MdArrowOutward } from 'react-icons/md'
 import { profile } from '../data/site'
 import { scrollToSection } from '../utils/scrollToSection'
 import Reveal from './Reveal'
@@ -23,9 +23,6 @@ function Contact() {
                 <Reveal className={styles.bottom}>
                     <p className={styles.lead}>{profile.openTo}. Tell me what you're working on.</p>
                     <div className={styles.links}>
-                        <a href={`mailto:${profile.email}`} className={`btn ${styles.email}`}>
-                            <MdMailOutline aria-hidden="true" /> {profile.email}
-                        </a>
                         {links.map((link) => (
                             <a key={link.label} href={link.href} className={styles.link} target="_blank" rel="noreferrer">
                                 {link.label} <MdArrowOutward aria-hidden="true" />

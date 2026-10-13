@@ -49,19 +49,6 @@
   gap: 12px 32px;
 }
 
-.email {
-  min-height: 56px;
-  padding: 0 28px;
-  background: var(--inv-accent);
-  color: var(--ink);
-  font-size: 19px;
-  overflow-wrap: anywhere;
-}
-
-.email:hover {
-  box-shadow: 6px 6px 0 var(--bg);
-}
-
 .link {
   min-height: 44px;
   display: inline-flex;
@@ -95,13 +82,4 @@
   align-items: center;
   gap: 8px;
   transition: color 0.2s;
-}
-
-@media (max-width: 760px) {
-  .email {
-    width: 100%;
-    justify-content: center;
-    font-size: 17px;
-    padding: 0 16px;
-  }
 }
