@@ -1,0 +1,100 @@
+.stack {
+  border-top: 1px solid var(--line);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+/* a loose grid: every chip is nudged off its row and drifts at its own pace */
+.cloud {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: 28px 12px;
+  padding-bottom: 60px;
+}
+
+.chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+.chip:nth-child(3n+2) { margin-top: 44px; animation-duration: 7s;   animation-delay: -2s; }
+.chip:nth-child(3n)   { margin-top: 16px; animation-duration: 5.5s; animation-delay: -1s; }
+.chip:nth-child(4n+1) { animation-duration: 7.5s; animation-delay: -4s; }
+.chip:nth-child(5n)   { margin-top: 60px; animation-duration: 5s;   animation-delay: -2.5s; }
+
+.tile {
+  width: 88px;
+  height: 88px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.big {
+  width: 112px;
+  height: 112px;
+  border-radius: 28px;
+  font-size: 56px;
+}
+
+.chip:hover .tile {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  transform: scale(1.08);
+}
+
+.label {
+  font-size: 13px;
+}
+
+@keyframes float {
+  from { transform: translateY(8px) rotate(-1.5deg); }
+  to   { transform: translateY(-12px) rotate(1.5deg); }
+}
+
+@media (max-width: 760px) {
+  .cloud {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 8px;
+    padding-bottom: 40px;
+  }
+
+  .chip:nth-child(n) {
+    margin-top: 0;
+  }
+
+  .chip:nth-child(3n+2) {
+    margin-top: 28px;
+  }
+
+  .tile,
+  .big {
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    font-size: 34px;
+  }
+}

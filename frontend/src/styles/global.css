@@ -1,26 +1,29 @@
 :root {
-  --color-keyword:  #569CD6;
-  --color-purple:   #C586C0;
-  --color-function: #DCDCAA;
-  --color-teal:     #4EC9B0;
-  --color-string:   #CE9178;
-  --color-variable: #9CDCFE;
-  --color-comment:  #6A9955;
+  --font-display: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
 
   /* flipping between light and dark */
-  --bg:             #0a0a0a;
-  --bg-secondary:   #111111;
-  --text-primary:   #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.6);
-  --border:         rgba(255, 255, 255, 0.08);
+  --bg:         #F4F4F0;
+  --ink:        #111312;
+  --muted:      #5A5F5C;
+  --line:       #D2D3CC;
+  --soft:       #EAEAE4;
+  --accent:     #1F3BFF;
+  --on-accent:  #FFFFFF;
+  --inv-accent: #A3AEFF;
+
+  --nav-h: 61px;
 }
 
-[data-theme="light"] {
-  --bg:             #ffffff;
-  --bg-secondary:   #f5f5f5;
-  --text-primary:   #0a0a0a;
-  --text-secondary: rgba(0, 0, 0, 0.6);
-  --border:         rgba(0, 0, 0, 0.08);
+[data-theme="dark"] {
+  --bg:         #0D0E10;
+  --ink:        #ECEDE8;
+  --muted:      #9A9F9B;
+  --line:       #2A2C30;
+  --soft:       #16181B;
+  --accent:     #8C9AFF;
+  --on-accent:  #0D0E10;
+  --inv-accent: #1F3BFF;
 }
 
 * {
@@ -29,18 +32,184 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: var(--bg);
-  color: var(--text-primary);
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-display);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* scroll progress bar */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  height: 3px;
+  background: var(--accent);
+  transform-origin: left;
+}
+
+/* content that slides up over the pinned hero */
+.over {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  box-shadow: 0 -24px 48px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.25s ease;
+}
+
+/* shared layout */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.sec {
+  padding-top: 104px;
+  padding-bottom: 104px;
+}
+
+section {
+  scroll-margin-top: var(--nav-h);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.sectionTitle {
+  font-size: clamp(34px, 4.4vw, 60px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.sectionNo {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0;
+  margin-right: 16px;
+  vertical-align: middle;
+}
+
+.note {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* buttons */
+.btn {
+  min-height: 52px;
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.ghost {
+  min-height: 52px;
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.ghost:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* arrival animation, triggered by scrollToSection() */
+.sweep {
+  height: 4px;
+  margin-bottom: -4px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+[data-arrived] > .sweep {
+  animation: sweep 1.4s 0.35s cubic-bezier(0.6, 0, 0.2, 1);
+}
+
+[data-arrived] .arrive {
+  animation: arrive 0.7s 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+@keyframes sweep {
+  0%   { transform: scaleX(0); opacity: 1; }
+  70%  { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+
+@keyframes arrive {
+  from { transform: translateX(-28px); opacity: 0; }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --nav-h: 106px;
+  }
+
+  .wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .sec {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

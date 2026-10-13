@@ -1,0 +1,29 @@
+.band {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  padding: 18px 0;
+  font-size: clamp(26px, 3.6vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  white-space: pre;
+  animation: slide 32s linear infinite;
+}
+
+.track:hover {
+  animation-play-state: paused;
+}
+
+.slash {
+  color: var(--accent);
+}
+
+@keyframes slide {
+  to { transform: translateX(-50%); }
+}

@@ -1,0 +1,195 @@
+.projects {
+  border-top: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-bottom: 40px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.card {
+  position: sticky;
+  min-height: 460px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transform-origin: top center;
+}
+
+.body {
+  flex: 1.1 1 380px;
+  min-width: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.no {
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.title {
+  font-size: clamp(34px, 4.6vw, 64px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.summary {
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.points li::before {
+  content: '— ';
+  color: var(--accent);
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.tags li {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.links {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 28px;
+}
+
+.link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 17px;
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--accent);
+}
+
+.visual {
+  flex: 1 1 320px;
+  min-height: 220px;
+  background: var(--accent);
+  color: var(--on-accent);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 32px;
+  overflow: hidden;
+}
+
+.visual:has(img) {
+  padding: 0;
+}
+
+.visual {
+  position: relative;
+}
+
+/* fills the panel whatever the picture's own shape is */
+.visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bigNo {
+  font-size: clamp(120px, 20vw, 280px);
+  line-height: 0.8;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.repo {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.more {
+  margin-top: 72px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 32px;
+}
+
+.moreText {
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* short or narrow screens: cards scroll normally instead of stacking */
+@media (max-width: 760px), (max-height: 720px) {
+  .stack {
+    gap: 28px;
+  }
+
+  .card {
+    position: static;
+    transform: none !important;
+  }
+
+  .body {
+    padding: 28px 24px;
+  }
+
+  .visual {
+    min-height: 160px;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .visual:has(img) {
+    min-height: 220px;
+  }
+
+  .bigNo {
+    font-size: 96px;
+  }
+}

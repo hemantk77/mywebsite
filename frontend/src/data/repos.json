@@ -1,0 +1,218 @@
+[
+  {
+    "name": "mywebsite",
+    "description": "",
+    "language": "JavaScript",
+    "pushed_at": "2026-06-20T23:48:56Z",
+    "html_url": "https://github.com/hemantk77/mywebsite",
+    "homepage": "https://mywebsite-alpha-seven-68.vercel.app",
+    "fork": false
+  },
+  {
+    "name": "internship-tracker",
+    "description": "",
+    "language": "JavaScript",
+    "pushed_at": "2026-03-08T17:22:12Z",
+    "html_url": "https://github.com/hemantk77/internship-tracker",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "Homie",
+    "description": "",
+    "language": "C++",
+    "pushed_at": "2026-01-10T22:59:47Z",
+    "html_url": "https://github.com/hemantk77/Homie",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "OnSide_Tracker",
+    "description": "",
+    "language": "JavaScript",
+    "pushed_at": "2026-01-10T14:54:55Z",
+    "html_url": "https://github.com/hemantk77/OnSide_Tracker",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "onside-tracker",
+    "description": "",
+    "language": "JavaScript",
+    "pushed_at": "2026-01-08T15:41:41Z",
+    "html_url": "https://github.com/hemantk77/onside-tracker",
+    "homepage": "https://onside-tracker.vercel.app",
+    "fork": false
+  },
+  {
+    "name": "SaaS",
+    "description": "",
+    "language": "Python",
+    "pushed_at": "2026-01-08T01:21:27Z",
+    "html_url": "https://github.com/hemantk77/SaaS",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "osi_visualizer_Hemant",
+    "description": "",
+    "language": "Python",
+    "pushed_at": "2026-01-07T23:22:41Z",
+    "html_url": "https://github.com/hemantk77/osi_visualizer_Hemant",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "job-tracker",
+    "description": "",
+    "language": "CSS",
+    "pushed_at": "2025-12-23T21:34:10Z",
+    "html_url": "https://github.com/hemantk77/job-tracker",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "CS50W-Project2",
+    "description": "",
+    "language": "Python",
+    "pushed_at": "2025-11-17T16:37:05Z",
+    "html_url": "https://github.com/hemantk77/CS50W-Project2",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "CS50W-Project1",
+    "description": "",
+    "language": "Python",
+    "pushed_at": "2025-11-06T15:15:35Z",
+    "html_url": "https://github.com/hemantk77/CS50W-Project1",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "antriks",
+    "description": "This repository is for the project I took on in my Summer'25 semester break. My plan was to build a website using HTML, CSS and JS which are the basic languages for frontend. I went on later to implement it with Django, this website is meant to provide info about upcoming launches and spacecrafts.",
+    "language": "Python",
+    "pushed_at": "2025-10-25T19:01:06Z",
+    "html_url": "https://github.com/hemantk77/antriks",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "CS50W-Project0",
+    "description": "",
+    "language": "HTML",
+    "pushed_at": "2025-10-22T20:11:29Z",
+    "html_url": "https://github.com/hemantk77/CS50W-Project0",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "Django_practice",
+    "description": "",
+    "language": "Python",
+    "pushed_at": "2025-10-14T21:35:26Z",
+    "html_url": "https://github.com/hemantk77/Django_practice",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "CS50-Python",
+    "description": "",
+    "language": "Python",
+    "pushed_at": "2025-10-06T12:28:06Z",
+    "html_url": "https://github.com/hemantk77/CS50-Python",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "Chess-Game",
+    "description": "Chess",
+    "language": "",
+    "pushed_at": "2025-08-24T14:32:03Z",
+    "html_url": "https://github.com/hemantk77/Chess-Game",
+    "homepage": "",
+    "fork": true
+  },
+  {
+    "name": "JS_tutorial",
+    "description": "",
+    "language": "JavaScript",
+    "pushed_at": "2025-08-16T22:16:19Z",
+    "html_url": "https://github.com/hemantk77/JS_tutorial",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "Amazon-Clone-Project",
+    "description": "",
+    "language": "HTML",
+    "pushed_at": "2025-08-01T13:44:43Z",
+    "html_url": "https://github.com/hemantk77/Amazon-Clone-Project",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "SoftMax",
+    "description": "",
+    "language": "Python",
+    "pushed_at": "2025-07-07T08:15:55Z",
+    "html_url": "https://github.com/hemantk77/SoftMax",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "Heart-Attack-Prediction-with-Logistic-Regression",
+    "description": "",
+    "language": "Python",
+    "pushed_at": "2025-07-07T07:47:50Z",
+    "html_url": "https://github.com/hemantk77/Heart-Attack-Prediction-with-Logistic-Regression",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "Stock-Market-Web-App",
+    "description": "",
+    "language": "PHP",
+    "pushed_at": "2025-07-02T14:42:24Z",
+    "html_url": "https://github.com/hemantk77/Stock-Market-Web-App",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "N-Queens_problem_Hemant",
+    "description": "",
+    "language": "Python",
+    "pushed_at": "2025-06-18T22:08:33Z",
+    "html_url": "https://github.com/hemantk77/N-Queens_problem_Hemant",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "Recipe_page_html",
+    "description": "",
+    "language": "HTML",
+    "pushed_at": "2025-04-07T21:47:06Z",
+    "html_url": "https://github.com/hemantk77/Recipe_page_html",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "Portfolio_test",
+    "description": "",
+    "language": "HTML",
+    "pushed_at": "2025-03-31T11:59:04Z",
+    "html_url": "https://github.com/hemantk77/Portfolio_test",
+    "homepage": "",
+    "fork": false
+  },
+  {
+    "name": "Parallel-Heat-equation",
+    "description": "",
+    "language": "C++",
+    "pushed_at": "2024-07-25T13:53:38Z",
+    "html_url": "https://github.com/hemantk77/Parallel-Heat-equation",
+    "homepage": "",
+    "fork": false
+  }
+]

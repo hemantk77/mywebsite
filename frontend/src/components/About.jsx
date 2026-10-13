@@ -1,47 +1,75 @@
-import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { profile, about } from '../data/site'
+import portrait from '../assets/portrait.webp'
+import Reveal from './Reveal'
 import styles from '../styles/About.module.css'
+
+const MotionImg = motion.img
 
 function About() {
     const ref = useRef(null)
-    const isInView = useInView(ref, {once: true, margin: '-100px'})
+
+    // the portrait drifts slower than the page
+    const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
+    const y = useTransform(scrollYProgress, [0, 1], [40, -40])
 
     return (
-        <section id='about' className={styles.about} ref={ref}>
+        <section id="about" ref={ref}>
+            <div className="sweep" aria-hidden="true" />
+            <div className="wrap sec">
+                <div className={styles.layout}>
+                    <div className={styles.left}>
+                        <h2 className="sectionTitle arrive"><span className="sectionNo">01</span>About</h2>
+                        <MotionImg
+                            src={portrait}
+                            alt={`Portrait of ${profile.name}`}
+                            className={styles.image}
+                            style={{ y }}
+                        />
+                    </div>
 
-            <motion.div
-                className={styles.left}
-                initial={{ opacity: 0, x: -40 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6 }}
-            >
-                <span><img src="/src/assets/image.jpg" alt="temporary_img" className={styles.image} /></span>
-            </motion.div>
+                    <Reveal className={styles.right}>
+                        <p className={styles.lead}>
+                            I'm a software developer based in Berlin, building things that{' '}
+                            <span className={styles.accent}>live on the internet.</span>
+                        </p>
+                        <p className={styles.bio}>
+                            I care about clean code, good UI and fast performance, and I like exploring
+                            new tech and contributing to open source.
+                        </p>
+                        <p className={styles.bio}>
+                            Away from the keyboard I play football and chess, listen to rap, and
+                            watch Formula 1.
+                        </p>
+                    </Reveal>
+                </div>
 
-            <motion.div
-                className={styles.right}
-                initial={{ opacity: 0, x: 40 }}
-                animate={isInView ? { opacity: 1, X:0 } :{}}
-                transition={{ duration: 0.6, delay: 0.2 }}
-            >
-                <p className={styles.sectionLabel}>// about me</p>
-                <h2 className={styles.heading}>
-                    I turn <span className={styles.accent}>ideas</span> into real <span className={styles.accent}>products</span>
-                </h2>
-                <p className={styles.bio}>
-                     I'm a full stack developer based in Berlin, passionate about
-                    building things that live on the internet. I care deeply about
-                    clean code, great UI and fast performance.
-                </p>
-                <p className={styles.bio}>
-                    When I'm not coding, you'll find me exploring new tech,
-                    contributing to open source, or just vibing with good music.
-                </p>
-            </motion.div>
+                <ul className={styles.cards}>
+                    {about.map((fact, i) => {
+                        const Icon = fact.Icon
+                        return (
+                            <li key={fact.label}>
+                                <Reveal delay={i * 0.1} className={styles.card}>
+                                    <div className={styles.media}>
+                                        {fact.image ? (
+                                            <img src={fact.image} alt="" style={{ objectFit: fact.fit }} />
+                                        ) : (
+                                            <Icon aria-hidden="true" />
+                                        )}
+                                    </div>
+                                    <div className={styles.cardText}>
+                                        <p className={`mono ${styles.label}`}>{fact.label}</p>
+                                        <p className={styles.value}>{fact.value}</p>
+                                    </div>
+                                </Reveal>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
         </section>
     )
 }
 
 export default About
-
-//some fixes need to be done
